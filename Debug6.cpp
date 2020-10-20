@@ -16,14 +16,19 @@ meant to check if the code is actually in order.
 // Array that needs sorting
 int arr[] = {20,12,65,45,98,65,85,12,54,78,55,13,50,19,84,20,43,10};
 int arrSize =  sizeof(arr)/sizeof(arr[0]);
+// added int that is temporary
+int temporary;
 int main() {
 
   //Bit of code for sorting
   for (unsigned j=arrSize;j>0;j--){
     for (unsigned i=1;i<j;i++){
       if (arr[i-1]>arr[i]){
-        arr[i-1] = arr[i];
+        // put what the temporary int equals
+        temporary = arr[i];
+// took out         arr[i-1] = arr[i]; so that it would reverse it.
         arr[i] = arr[i-1];
+        arr[i-1] = temporary;
         }
     }
   }
